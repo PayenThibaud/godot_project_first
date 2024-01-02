@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://duu8pvmbq1ni8"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.cs" id="1_650av"]
+[ext_resource type="Texture2D" uid="uid://bradcueyfeeaw" path="res://Green.png" id="1_itrco"]
+[ext_resource type="Texture2D" uid="uid://xqa0atd6gyre" path="res://cooltext450135333584446.png" id="2_ei2tb"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_650av")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_itrco")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -554.0
+offset_top = -125.0
+offset_right = 555.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ei2tb")
+
+[node name="level1" type="Button" parent="."]
+anchors_preset = -1
+offset_left = 95.0
+offset_top = 429.0
+offset_right = 415.0
+offset_bottom = 503.0
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+
+[node name="level2" type="Button" parent="."]
+anchors_preset = -1
+offset_left = 670.0
+offset_top = 433.0
+offset_right = 990.0
+offset_bottom = 507.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 2"
+
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]

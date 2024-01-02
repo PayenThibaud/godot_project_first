@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvaq2vui6l10i"]
+[gd_scene load_steps=4 format=3 uid="uid://bvaq2vui6l10i"]
 
 [ext_resource type="Texture2D" uid="uid://caeyesy06hiir" path="res://End (Idle).png" id="1_gcad3"]
+[ext_resource type="Script" path="res://scenes/trophee.cs" id="1_rixkl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_inu23"]
 size = Vector2(67, 66)
 
 [node name="Trophee" type="Area2D"]
+script = ExtResource("1_rixkl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -15,3 +17,5 @@ texture = ExtResource("1_gcad3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_inu23")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
